@@ -1,21 +1,27 @@
+
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'; import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private router: Router, private httpClient: HttpClient) { }
+
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
   private isAuthenticated = false;
-  
+
   private _authUser$ = new BehaviorSubject<any | null>(null);
 
   public authUser$ = this._authUser$.asObservable();
 
   login(payload: LoginPayload): void {
+
+    // const payload = {
+    //   email: '',
+    //   password: '',
+    // }
     this.isAuthenticated = true;
     this.httpClient
       .get<any[]>(
@@ -29,14 +35,13 @@ export class AuthService {
             const authUser = response[0];
             this._authUser$.next(authUser);
             localStorage.setItem('token', authUser.token);
-            this.router.navigate(['/dashboard/home']);
+            this.router.navigate(['/dashboard']);
           }
         },
         error: (err) => {
           alert('Error de conexion');
         },
       });
-    this.router.navigate(['/dashboard']);
 
   }
 

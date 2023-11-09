@@ -3,11 +3,9 @@
     {
       "name": "admin",
       "lastName": "admin",
-      "email": "fake@mail.com",
+      "email": "admin@mail.com",
       "password": "123456",
-      "token": "jgfdsSfvcdskjdsfDSF435324ikdsad",
-      "role": "ADMIN",
-      "id": 1
+      "token": "jgfdsSfvcdskjdsfDSF435324ikdsad"
     }
   ]
 }

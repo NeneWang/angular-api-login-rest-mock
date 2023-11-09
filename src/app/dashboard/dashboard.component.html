@@ -1,3 +1,6 @@
-<p>Dashboard should only have access for admin</p>
+<p>Dashboard should only have access for Authentication users</p>
+<p>You are currently logged in as:</p>
+
+<pre>{{ user | async | json }}</pre>
 
 <button (click)="logout()">Logout</button>

@@ -7,6 +7,7 @@ import { AuthService } from '../auth.services';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  user = this.authService.authUser$;
   constructor(private authService: AuthService) {}
 
   logout(): void {
