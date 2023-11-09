@@ -1,4 +1,30 @@
-<p>login works!</p>
+
+
+<h1>Login</h1>
+
+<p>You dont have access to dashboard</p>
+
+Make sure to run the mock server locally
+
+<pre>
+    cd api
+    node index.js
+</pre>
+
+
+
+<form [formGroup]="loginForm">
+  <div>
+      <input formControlName="email" matInput type="email" />
+      <input formControlName="password" matInput type="password" />
+    </div>
+
+  <button (click)="login()" mat-flat-button color="primary">
+    Initiate Session
+  </button>
+</form>
+
+
 
 
 <button (click)="login()">Login as Demo</button>
